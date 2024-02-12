@@ -1,0 +1,116 @@
+﻿*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    min-width:2px;
+    min-height:2px;
+
+}
+body {
+
+}
+.BbnkDisplayHide{
+    display:none !important;
+}
+.BbnkItem {
+    /* Denemeler icin */
+
+    font-size:10pt;
+    font-weight:bold;
+    display: flex;
+    align-items: center;
+    justify-items: flex-start;
+    padding: 1px;
+    white-space:nowrap;
+}
+    .BbnkItem:hover {
+        background-color: antiquewhite;
+    }
+.BbnkItemBody {
+    display: inline-block;
+    border: none;
+   
+}
+
+.BbnkItemPanel {
+    border: none;
+    
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+.ItemIcon {
+   display:flex;
+   margin-top:0px;
+}
+.ItemImage {
+    height:24px;
+    border: 1px solid silver;
+    border-radius: 50%;
+    margin:0px 2px;
+}
+.ItemText {
+
+    padding: 0px !important;
+  
+    line-height: normal;
+}
+.BbnkItemChildrenBox {
+    border: none;
+    cursor: pointer;
+    min-height: 16px;
+    min-width: 16px;
+    margin-left: 8px;
+    display:flex;
+    flex-direction:column;
+}
+.BbnkTreeView{
+    border:1px solid black;
+    border-radius:4px;
+    padding:5px;
+    background-color:darkgrey;
+/*    display:inline-block;*/
+     overflow: auto;
+    
+}
+
+.BbnkForm {
+    border: 1px solid black;
+    border-radius: 4px;
+    margin:4px;
+    padding:2px;
+}
+
+.BbnkCloseForm {
+    
+}
+.BbnkFormHeader {
+    /* Denemeler icin */
+    border-radius:3px;
+    font-size: 10pt;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-items: flex-start;
+    padding: 4px;
+    white-space: nowrap;
+    background-color: darkgray;
+}
+
+    .BbnkFormHeader:hover {
+        background-color: antiquewhite;
+    }
+.BbnkFormCloseHeader {
+    
+}
+.BbnkFormChildrenBox {
+    margin-top:2px;
+    background-color: azure;
+    border-radius: 3px;
+    min-height: 10px;
+    min-width: 20px;
+    margin-left: 0px;
+    display: flex;
+}
+
+

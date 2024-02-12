@@ -1,0 +1,44 @@
+OLAYA YÖNELİK PROGRAMALA
+BU NESNEYE YONELİK PROGRAMLAMADAN FARKLI OLARAK  MEKEZE OLAYI OLAN BİR YÖNTEMDİR.
+BU YAKLAYIMDA İLERLERKEN KESİNLİKLE NESNEYE ÖNELİK PROGRAMLAMA TEKNİKLERİ KULLANILIR 
+AMA HER ŞEY OLAY ÇEVRESİNDE DİR.
+BU YAKLAŞIMDA DATA DA OLAY KAYNAKLI DIR 
+ÖRNEK BUR OGRENCI ELE ALALIM 
+ÖĞRENCİNİN ADI,SOY ADI, VE PUANI OLASIN 
+
+ILK OLUSTURUNCA -->  OGRENCI:{ADI:INDEFINED,SOYADI:UNDEFINED,PUANI:UNDEFINED,OLAYLARI:[]} OLUR
+
+AddEvent: metodu ile
+	ogrensi.addEvent({ADI:"mustafa",InsertTime:"1.1.2000 1:00",{inserter:{name:uygulama,user:ali}});
+	olay eklenince 
+	OGRENCI:{ADI:"mustafa",SOYADI:UNDEFINED,PUANI:UNDEFINED,OLAYLARI:[
+										{inserter:{field:"ADI",Value:"mustafa",name:uygulama,user:ali,InsertTime:"1.1.2000 1:00"}
+									]}
+	haline gelir
+	
+	ogrensi.addEvent({SOADI:"kaplan",InsertTime:"2.1.2000 3:00",{inserter:{name:uygulama,user:ali}});
+	olay eklenince 
+	OGRENCI:{ADI:"mustafa",SOYADI:"kaplan",PUANI:UNDEFINED,OLAYLARI:[
+										{inserter:{field:"ADI",Value:"mustafa",name:uygulama,user:ali,InsertTime:"1.1.2000 1:00"},
+										{inserter:{field:"SOYADI",Value:"kaplan",name:uygulama,user:veli,InsertTime:"2.1.2000 3:00"}						
+									]}
+	haline gelir
+
+	ogrensi.addEvent({PUANI:12,InsertTime:"2.1.2000 5:00",{inserter:{name:uygulama,user:ali}});
+	olay eklenince 
+	OGRENCI:{ADI:"mustafa",SOYADI:"kaplan",PUANI:12,OLAYLARI:[
+										{inserter:{field:"ADI",Value:"mustafa",name:uygulama,user:ali,InsertTime:"1.1.2000 1:00"},
+										{inserter:{field:"SOYADI",Value:"kaplan",name:uygulama,user:veli,InsertTime:"2.1.2000 3:00"},
+										{inserter:{field:"PUANI",Value:12,name:uygulama,user:ali,InsertTime:"2.1.2000 5:00"}					
+									]}
+	haline gelir
+
+	ogrensi.addEvent({PUANI:-5,InsertTime:"2.1.2000 7:00",{inserter:{name:uygulama,user:ali}});
+	olay eklenince 
+	OGRENCI:{ADI:"mustafa",SOYADI:"kaplan",PUANI:7,OLAYLARI:[
+										{inserter:{field:"ADI",Value:"mustafa",name:uygulama,user:ali,InsertTime:"1.1.2000 1:00"},
+										{inserter:{field:"SOYADI",Value:"kaplan",name:uygulama,user:veli,InsertTime:"2.1.2000 3:00"},
+										{inserter:{field:"PUANI",Value:12,name:uygulama,user:ali,InsertTime:"2.1.2000 5:00"}
+										{inserter:{field:"PUANI",Value:-5,name:uygulama,user:ali,InsertTime:"2.1.2000 7:00"}					
+									]}
+	haline gelir
