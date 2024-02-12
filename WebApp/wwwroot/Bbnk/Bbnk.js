@@ -1025,7 +1025,7 @@ addEventListener("load", function () {
             this.Open = true;
             Bbnk.New("TreeView", {  // Treview Yapilandiriliyor
                                     // herhangi bir nesneden Bbnk tabanli Json nesnesi uretilir
-                Root: Bbnk.New("Json", { ItemText: "x", Value: data }),
+                Root: Bbnk.New("Json", { ItemText: "window", Value: window }),
                 Parent:this.pChildrenBox
             })
         }
