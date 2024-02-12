@@ -1017,6 +1017,8 @@ addEventListener("load", function () {
     //    Parent:Bbnk.Body
     //})
 
+    // Dialog denenecek
+
     let f = Bbnk.New("Form", {
         Parent:Bbnk.Body,
         Init: function () {
