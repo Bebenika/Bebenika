@@ -1006,18 +1006,7 @@ let data = {
 addEventListener("load", function () {
     Bbnk.Document = Bbnk.New("Dom", {element:document});
     Bbnk.Body = document.body.$bbnk;
-    //let x = Bbnk.New("Bbnk", {
-    //    Init: function () {
-    //        this.Value = "Deneme";
-    //    }
-    //})
-    //Bbnk.New("TreeView", {  // Treview Yapilandiriliyor
-    //                        // herhangi bir nesneden Bbnk tabanli Json nesnesi uretilir
-    //    Root: Bbnk.New("Json", { ItemText: "x", Value: Bbnk }),
-    //    Parent:Bbnk.Body
-    //})
 
-    // Dialog denenecek
 
     let f = Bbnk.New("Form", {
         Parent:Bbnk.Body,
