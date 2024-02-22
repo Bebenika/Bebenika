@@ -4,113 +4,513 @@
     box-sizing:border-box;
     min-width:2px;
     min-height:2px;
-
+    position:relative;
 }
 body {
+    height: 100vh;
+    overflow:hidden;
+}
+.Bbnk{
 
 }
-.BbnkDisplayHide{
-    display:none !important;
-}
-.BbnkItem {
-    /* Denemeler icin */
 
-    font-size:10pt;
-    font-weight:bold;
+.BbnkModalPanel{
+    position:absolute;
+    inset:0px 0px 0px 0px;
+    background-color:saddlebrown;
+    opacity:0.5;
+}
+
+.BbnkDisplayHide {
+    display: none !important;
+}
+.BbnkResizeable {
+    border: 1px solid gray;
+}
+.BbnkDock-fill{
+    position:absolute !important;
+    inset: 0px 0px 0px 0px !important;
+}
+.BbnkResizer {
+    border: none;
+    border-radius: 0px;
+    width: 8px;
+    height: 8px;
+    cursor: move;
+    background-color: gray;
+    opacity: 1;
+    z-index: 10000;
+}
+
+    .BbnkResizer:hover {
+        background-color: darkslategrey;
+        opacity: 1;
+    }
+.Bbnk-Flex-Column01{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.BbnkDesktop {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: auto;
+    left: 0px;
+    background-color: #F9F3F5;
+}
+.BbnkDesktopItem {
+    /*    border: 1px solid black;
+    border-radius: 3px;*/
+
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    cursor:pointer;
+}
+.BbnkDesktopItem:hover {
+    background-color: #EAFAA5;
+    border-radius:8px;
+    
+}
+.BbnkDektopItemImage {
+/*    border: 1px solid black;
+    border-radius: 3px;*/
+    height:48px;
+    max-width:100px;
+}
+
+.BbnkPowerPanel {
+    border: 3px solid gray;
+    border-radius: 10px;
+    padding: 5px 30px;
+    background-color: #DEDFDF !important;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row !important;
+    margin-top:15px;
+}
+
+    .BbnkPowerPanel:hover {
+        border: 3px solid black;
+        background-color: #DEDFDF !important;
+    }
+.BbnkStartPoweIcon {
+    border-radius: 10px;
+    font-size: 26pt;
+    font-weight: bold;
+    margin: 5px 10px;
+    cursor: pointer;
+    background-color: antiquewhite;
+    color:black;
+    padding:5px 15px;
+}
+    .BbnkStartPoweIcon:hover {
+        background-color: #F93B28;
+        color: #F8F18D;
+    }
+.BbnkLoginPanel {
+    border: 3px solid gray;
+    border-radius: 10px;
+    padding: 5px 30px;
+    background-color: #DEDFDF;
+}
+    .BbnkLoginPanel:hover {
+        border: 3px solid red;
+        background-color: #DEDFDF !important;
+    }
+.BbnkLoginText {
+    font-size: 14pt !important;
+    background-color:transparent !important;
+}
+.BbnkDektopItemText {
+    /*border: 1px solid black;
+    border-radius: 3px;
+    padding:1px 5px;*/
+    font-size: 8pt;
+    max-width: 100px;
+    overflow: clip;
+    white-space: nowrap;
+    background-color: #E8F3FC;
+}
+.BbnkDesktopItem:hover .BbnkDektopItemText {
+    background-color:transparent;
+    color:red;
+}
+
+
+.BbnkTaskBarStartMenu {
+    opacity: 0;
+    position: absolute;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #C0C4C3;
+    transition: 0.35s all ease;
+    padding: 10px;
+}
+.BbnkTaskBarStartMenux {
+    opacity: 1;
+   /* transition: 2s all ease;*/
+}
+
+
+.BbnkTaskBarItem {
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: cornflowerblue;
+    width: 32px;
+    height: 32px;
+}
+
+
+
+
+
+.BbnkTaskBar {
+    position: absolute;
+    top: auto;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    border: 1px solid red;
+    border-radius: 3px;
+    background-color: aquamarine;
+    min-height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    font-size: 16pt;
+}
+.BbnkTaskBarStart {
+    border: 2px solid blue;
+    border-radius: 4px;
+    background-color: antiquewhite;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    
+    
+}
+    .BbnkTaskBarStart:hover {
+        border: 2px solid red;
+        border-radius: 4px;
+        background-color: Blue;
+        color: white;
+        font-weight: bold;
+    }
+.BbnkTasksPanel {
+    border: 1px solid blue;
+    border-radius: 4px;
+    background-color: antiquewhite;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 10px;
+    min-height: 10px;
+    flex-grow: 1;
     display: flex;
     align-items: center;
-    justify-items: flex-start;
-    padding: 1px;
-    white-space:nowrap;
+    padding: 4px;
 }
-    .BbnkItem:hover {
-        background-color: antiquewhite;
+.BbnkTaskBarRightPanel {
+    border: 1px solid blue;
+    border-radius: 4px;
+    background-color: antiquewhite;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    min-width:10px;
+    min-height:10px;
+}
+
+.BbnkMenu {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: #D6FCF3;
+}
+.BbnkMenuTitle{
+    background-color:gray;
+    border-radius:3px;
+    color:whitesmoke;
+    padding:2px 6px;
+    white-space:nowrap;
+    margin-bottom:5px;
+}
+
+
+.MenuSeperator{
+    height:3px;
+    border-bottom:3px solid black;
+}
+.BbnkMenu .BbnkItemChildrenBox {
+    margin-left: 24px;
+}
+.BbnkMenu .BbnkItemBody {
+    background-color: transparent;
+    color: #2E3006;
+    border-radius: 4px;
+    padding:3px !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+}
+   /* .BbnkMenu .BbnkItemBody:hover {
+        background-color: #FC4543;
+        color: #F4F6BB;
+    }*/
+.BbnkItem {
+    display: flex;
+    flex-direction: column;
+}
+.BbnkItemBody{
+    display:flex;
+    width:fit-content;
+    align-items:center;
+    justify-content: start;
+    cursor:pointer;
+    margin:1px;
+    min-height:16px;
+}
+.BbnkItemBody:hover {
+   background-color:aquamarine;
+}
+.BbnkItemBodyPart {
+    line-height: 0px;
+    margin:1px;
+}
+.ItemImage{
+    height:14px;
+}
+.ItemText{
+  
+}
+
+.BbnkItemChildrenBox {
+    
+    width: fit-content;
+    
+}
+
+
+.isTreeItem .BbnkItemChildrenBox {
+    border: none !important;
+    border-radius: 0px !important;
+    margin-left: 24px !important;
+    background-color: transparent !important;
+    padding: 0px !important;
+}
+}
+
+.isTreeItem.BbnkItem {
+   
+}
+.isTreeItem .ItemText{
+    width: revert !important;
+}
+.isTreeItem .BbnkItemBody {
+    width: min-content !important;
+    background-color: transparent !important;
+}
+    .isTreeItem .BbnkItemBody:hover {
+        margin: 0px;
+        background-color: #FAC7A1 !important;
+        color: black;
     }
-.BbnkItemBody {
+
+
+.isForm .BbnkItemChildrenBox {
+    border:1px solid black;
+    border-radius:0px;
+    padding:0px;
+    margin-left: 0px;
+    width:auto;
+    background-color:silver;
+}
+.isForm.BbnkItem {
+    width: fit-content !important;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 0px;
+}
+.isForm .BbnkItemBody {
+
+    width: 100%;
+    margin: 0px;
+    background-color:gray;
+    color:white;
+    
+}
+.isForm .BbnkItemBody .CloseIcon {
+   margin:3px;
+   cursor:pointer !important;
+}
+.isForm .ItemText {
+    padding-left:4px;
+    width: 100%;
+    
+  
+}
+
+
+.BbnkSplitePanel {
+    
+    border-radius: 4px;
+    position:absolute;
+}
+.BbnkSplitePanel1{
+    background-color:transparent;
+}
+.BbnkSplitePanel2 {
+    background-color: transparent;
+}
+.BbnkSplitter {
+    
+    border-radius: 4px;
+    position: absolute;
+    background-color: red;
+}
+.BbnkSpliterPanelButton { 
+    margin: 1px;
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 0px;
+    background-color: whitesmoke;
+    color: black;
+    font-size: 10pt;
+}
+.BbnkSpliterControlPanel {
+    position: absolute;
+    cursor:pointer;
+}
+.BbnkHeaderMenu {
+    display: flex;
+    justify-content: flex-start; /* 0. div'i sağa alır */
+    align-items: center;
+    border: 1px solid gray;
+    border-radius: 1px;
+    background-color: #C4FBF5;
+    padding: 2px;
+    margin: 1px;
+    min-height: 16px;
+}
+
+.HeaderMenuPart{
+    
+   /* min-height:15px;
+    min-width:30px;*/
+    
+}
+.HeaderMenuLeftFix {
+    display: flex;
+    align-items: center;
+}
+.HeaderMenuMidle {
+    flex-grow: 1;
+    display:flex;
+    align-items: center;
+}
+.HeaderMenuRight {
+    display: flex;
+
+    padding:0px 2px;
+}
+.HeaderMenu-column {
+    flex-direction:column;
+    align-items:flex-start;
+  
+}
+
+.HeaderMenuRightFix {
+}
+.HeaderMenuEmpty{
+    border:none !important;
+}
+.HeaderCombo {
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: bold;
+    background-color: #A6C4FB;
+    cursor:pointer;
+    color:red;
+
+}
+    .HeaderCombo:hover {
+        background-color: #42B5FB;
+        color: whitesmoke;
+    }
+.HeaderMenuComboText {
     display: inline-block;
-    border: none;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
    
 }
 
-.BbnkItemPanel {
-    border: none;
-    
-    cursor: pointer;
-    margin: 0;
-    padding: 0;
-}
-.ItemIcon {
-   display:flex;
-   margin-top:0px;
-}
-.ItemImage {
-    height:24px;
-    border: 1px solid silver;
-    border-radius: 50%;
-    margin:0px 2px;
-}
-.ItemText {
-
-    padding: 0px !important;
-  
-    line-height: normal;
-}
-.BbnkItemChildrenBox {
-    border: none;
-    cursor: pointer;
-    min-height: 16px;
-    min-width: 16px;
-    margin-left: 8px;
-    display:flex;
-    flex-direction:column;
-}
-.BbnkTreeView{
-    border:1px solid black;
-    border-radius:4px;
-    padding:5px;
-    background-color:darkgrey;
-/*    display:inline-block;*/
-     overflow: auto;
-    
+.HeaderMenuMidle .HeaderMenuComboText {
 }
 
-.BbnkForm {
-    border: 1px solid black;
-    border-radius: 4px;
-    margin:4px;
-    padding:2px;
-}
-
-.BbnkCloseForm {
-    
-}
-.BbnkFormHeader {
-    /* Denemeler icin */
-    border-radius:3px;
-    font-size: 10pt;
-    font-weight: bold;
+.ImageTextCombo {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    justify-items: flex-start;
-    padding: 4px;
-    white-space: nowrap;
-    background-color: darkgray;
-}
-
-    .BbnkFormHeader:hover {
-        background-color: antiquewhite;
-    }
-.BbnkFormCloseHeader {
-    
-}
-.BbnkFormChildrenBox {
-    margin-top:2px;
-    background-color: azure;
+    width: max-content;
+    border: 1px solid black;
     border-radius: 3px;
-    min-height: 10px;
-    min-width: 20px;
-    margin-left: 0px;
-    display: flex;
+    margin: 0px 2px;
+    cursor: pointer;
+    padding:2px 4px;
+}
+.ImageTextCombo:hover {
+    background-color:antiquewhite;
+}
+.HeaderMenuRightItem-Image{
+    height:20px;
+    border:1px solid black;
+    border-radius:25%;
+    margin-left:2px;
+}
+.HeaderMenuRightItem-Text{
+    font-size:12pt;
+    font-weight:bold;
+    color:black;
+    white-space:nowrap;
+    padding:1px 4px;
+    /*line-height:0px;*/
 }
 
+.HeaderListCombo {
+    position: absolute;
+    background-color:antiquewhite;
 
+}
+.HeaderListCombo:hover {
+    position: absolute;
+    background-color: aquamarine;
+}
+    .HeaderListCombo .ImageTextCombo .HeaderMenuRightItem-Text {
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* Tek bir sütun, mevcut alanın tamamını kaplar */
+        gap: 10px; /* İsteğe bağlı olarak, satırlar arasında boşluk bırakır */
+    }
+
+    .HeaderListCombo .ImageTextCombo {
+        right: 5px;
+        margin: 5px !important;
+        padding: 4px !important;
+        border: 1px solid red;
+        justify-content: start;
+        width:100%;
+    }
+    .BbnkMenu .BbnkComboMenu{
+        position:absolute !important;
+    }
